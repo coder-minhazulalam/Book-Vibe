@@ -1,9 +1,9 @@
+import { Link} from "react-router";
 
-const BooksDetails = ({items}) => {
-
+const BooksCards = ({items}) => {
 
     return (
-        <div className="card bg-base-200 w-10/12 mx-auto md:w-96  md:m-0 md:p-4  rounded-2xl shadow-2xl">
+  <Link to={`/BooksDetailsForEachCard/${items.bookId}`} className="card bg-base-200 w-10/12 mx-auto md:w-96  md:m-0 md:p-4  rounded-2xl shadow-2xl">
            
   <figure className=" bg-gray-200 p-4 ">
     <img
@@ -35,8 +35,8 @@ const BooksDetails = ({items}) => {
     </div>
   
   </div>
-</div>
+</Link>
     );
 };
 
-export default BooksDetails;
+export default BooksCards;
