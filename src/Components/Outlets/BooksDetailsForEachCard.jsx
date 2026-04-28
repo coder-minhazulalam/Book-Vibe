@@ -6,8 +6,7 @@ const BooksDetailsForEachCard = () => {
   const { id } = useParams();
   const books = useLoaderData();
 
-const { handleMarksAsRead ,
-    handleWishList } = useContext(contextBook);
+const { handleWishList,handleMarksAsRead  } = useContext(contextBook);
 
 
   const singleBooks = books.find((data) => data.bookId == parseInt(id));

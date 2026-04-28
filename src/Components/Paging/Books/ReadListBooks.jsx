@@ -1,6 +1,10 @@
+
 import { Link } from "react-router";
 
-const ReadListBooks = ({ data }) => {
+const ReadListBooks = ({data , sortingType } ) => {
+
+
+
     const {
         bookId,
         author,
@@ -14,7 +18,11 @@ const ReadListBooks = ({ data }) => {
         yearOfPublishing
     } = data;
 
+
+
     return (
+
+
         <div className=" mt-5 shadow-xl flex flex-col mx-auto lg:flex-row gap-6 p-6 border border-gray-200 rounded-2xl w-full max-w-4xl bg-white mb-6">
             
             {/* Image Section */}
