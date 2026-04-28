@@ -1,11 +1,14 @@
+import { useContext} from "react";
 import { useLoaderData, useParams } from "react-router";
+import { contextBook } from "../../BookContextApi/BookContextprovider";
 
 const BooksDetailsForEachCard = () => {
   const { id } = useParams();
-  console.log(id);
-
   const books = useLoaderData();
-  console.log(books);
+
+const { handleMarksAsRead ,
+    handleWishList } = useContext(contextBook);
+
 
   const singleBooks = books.find((data) => data.bookId == parseInt(id));
 
@@ -89,9 +92,9 @@ const BooksDetailsForEachCard = () => {
 
               {/* Buttons  ------------------------------------------------------------------------------------------*/}
               <div className="flex gap-4 pt-4">
-                <button className="btn btn-outline px-8">Read</button>
+                <button className="btn btn-outline px-8" onClick={()=> handleMarksAsRead(singleBooks)}>Read</button>
 
-                <button className="btn btn-info text-white px-8">
+                <button className="btn btn-info text-white px-8" onClick={()=> handleWishList(singleBooks)}>
                   Wishlist
                 </button>
               </div>
